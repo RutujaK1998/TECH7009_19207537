@@ -14,7 +14,7 @@ def home(request):
         duration = request.POST.get("duration")
         budget = request.POST.get("budget")
         # Extract other form fields here
-        openai.api_key = "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"
+        openai.api_key = "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"
         prompt = f"Generate an itinerary for a trip to {destination} for a duration of {duration} days with a budget of {budget}"
         response = openai.Completion.create(
             engine='text-davinci-003',

@@ -47,7 +47,7 @@ This is an Artificial Intelligence based Itinerary planner that generates person
    python manage.py runserver
 ## Usage
 -Visit the web interface and plan your itinerary
--You can go to Plan Your Trip and fill up the form to generate your personalized itinerary
--you can explore common attractions which is based on most rated by tourists
+- You can go to Plan Your Trip and fill up the form to generate your personalized itinerary
+- you can explore common attractions which is based on most rated by tourists
 
    

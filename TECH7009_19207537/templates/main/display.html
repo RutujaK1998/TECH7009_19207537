@@ -1,0 +1,278 @@
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+  </head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home'%}">Plan your Trip</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'commonattractions'%}">Common Attractions</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="container">
+        <!-- <h3 class="font-1 font-title white-text">Explore more. 
+        Plan less.</h3>
+        <h3 class="font-4 font-desc white-text">Plan your next travel adventure with AI</h3> -->
+        <!-- <h2 class="title">
+            <span class="title-word title-word-1">Explore</span>
+            <span class="title-word title-word-2">more</span>
+            <span class="title-word title-word-3">Plan</span>
+            <span class="title-word title-word-4">less.</span>
+            <span class="title-word title-word-5">Plan</span>
+            <span class="title-word title-word-6">Your</span>
+            <span class="title-word title-word-7">next</span>
+            <span class="title-word title-word-8">travel</span>
+            <span class="title-word title-word-9">adventure</span>
+            <span class="title-word title-word-10">with</span>
+            <span class="title-word title-word-11">AI</span>
+          </h2> -->
+          <button class="glow-on-hover" type="button">Explore more. Plan less.Plan your next travel adventure with AI</button>
+    </div>
+
+<style>
+.hero {
+    background-image: url('https://wallpaperaccess.com/full/488392.jpg');
+    background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100vh;
+}
+
+.title {
+    font-weight: 1000;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 8em;
+   padding-left: -1em;
+
+}
+.glow-on-hover {
+    margin-top: 10em;
+    width: 500px;
+    height: 150px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.title-word {
+
+text-align: center;
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+.title-word-5 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-6 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-7 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-8 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+.title-word-9 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-10 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-11 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+/* Here are just some visual styles. 🖌 */
+
+
+.font-desc {
+    font-weight: 1000;
+    text-align: center;
+    font-weight: bold;
+}
+
+.app-bar {
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    /* Add your app bar styles here */
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.large-btn {
+    height: 65px;
+    width: 80px;
+    border-radius: 20%;
+    background-color: #3E86F5CC;
+    color: white;
+    /* Add your button styles here */
+}
+
+.text-btn {
+    text-transform: none;
+    /* Add your button styles here */
+}
+
+.large-text-btn {
+    text-transform: none;
+    font-size: 1.5rem;
+    color: blue;
+    background-color: white;
+    /* Add your button styles here */
+}
+
+
+.x-small-btn {
+    text-transform: none;
+    font-size: 0.7rem;
+    /* Add your extra small button styles here */
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        height: 120vh;
+        background-size: cover;
+        padding: 5%;
+    }
+
+    .font-title {
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    .font-desc {
+        font-weight: 500;
+        text-align: left;
+    }
+
+}
+
+ 
+</style>

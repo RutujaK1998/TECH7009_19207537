@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itenery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+      <form method="post">
+        {% csrf_token %}
+        <div class="container mt-4">
+            <div class="text-center p-3 bg-info text-dark mb-4">
+                <p>Get your AI powered Itenery suggestions now</p>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+            <div class="mb-3">
+                <label for="destination" class="form-label"><strong>Where do you want to go?</strong></label>
+                <input required type="text" class="form-control" name="destination" id="destination" placeholder="Enter your destination">
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="mb-3">
+                <label for="age" class="form-label"><strong>Enter your age</strong></label>
+                <input type="text" class="form-control" name="age" id="age" placeholder="">
+            </div>
+            </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="budget" class="form-label"><strong>Enter your Budget (upto 750 GBP)</strong></label>
+                        <input required type="text" class="form-control" name="budget" id="budget" placeholder="750 GBP(Maximum)">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="tripDuration" class="form-label"><strong>Enter Trip Duration</strong></label>
+                        <input required type="text" class="form-control" name="duration" id="tripDuration" placeholder="3">
+                    </div>
+                </div>
+                
+            </div>
+            
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"><strong>Choose your Interests</strong></label>
+                        <select class="form-select" aria-label="Select">
+                            <option selected>🏦 History</option>
+                            <option value="Art">🧵 Art</option>
+                            <option value="Food">🍛 Food</option>
+                            <option value="Music">🎶 Music</option>
+                            <option value="Nature">🌳 Nature</option>
+                            <option value="Sports">🏆 Sports</option>
+                            <option value="Photography">📷 Photography </option>
+                            <option value="Architecture">📐 Architecture</option>
+                            <option value="Literature">📗 Literature</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"><strong>Which Cusin do you want to try?</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>🍠 Traditional</option>
+                            <option value="Japanese">🍡 Japanese</option>
+                            <option value="Italian">🍛 Italian</option>
+                            <option value="American">🧁 American</option>
+                            <option value="Korean">🍩 Korean</option>
+                            <option value="Mexican">👼 Mexican</option>
+                            <option value="Thai">🍨 Thai</option>
+                            <option value="Turkish">🧃 Turkish</option>
+                            <option value="Indian">🍦 Indian </option>
+                            <option value="French">🥘 French</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="budget" class="form-label"><strong>Accommodation type</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Hotel</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Resort">Resort</option>
+                            <option value="Burngalow">Burngalow</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="tripDuration" class="form-label"><strong>What is your Travel Style?</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Comfortable</option>
+                            <option value="Adventerious">Adventerious</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="budget" class="form-label"><strong>Transportation type</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Train</option>
+                            <option value="Road">Road</option>
+                            <option value="Aeroplane">Aeroplane</option>
+                            <option value="Sea">Sea</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="tripDuration" class="form-label"><strong>Activity type</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Camping</option>
+                            <option value="Vacation">Vacation</option>
+                            <option value="Tour">Tour</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-success">Get Itinerary</button>
+        </div>
+    </form>
+    {% if generated_itinerary %}
+    <div class="generated-itinerary">
+        <h2>Generated Itinerary:</h2>
+        <p>{{ generated_itinerary }}</p>
+    </div>
+    {% endif %}
+    <hr>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
